@@ -1,0 +1,15 @@
+# Configuração do projeto para a CLI do Supabase.
+project_id = "rdo-pavimentacao"
+
+[auth]
+# Contas novas entram como "pendente" e não veem nada até o
+# proprietário liberar. Ainda assim, depois de criar as contas da
+# equipe, vale desligar o cadastro aberto no painel do Supabase.
+enable_signup = true
+
+[auth.email]
+enable_confirmations = true
+
+[functions.extrair]
+# Exige login (token do Supabase) para chamar a leitura automática.
+verify_jwt = true

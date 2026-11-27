@@ -1,0 +1,6 @@
+{
+  "name": "rdo-testes-tela",
+  "private": true,
+  "description": "Teste de tela do app com um Supabase simulado sobre PostgreSQL local",
+  "dependencies": { "pg": "8.16.3" }
+}
