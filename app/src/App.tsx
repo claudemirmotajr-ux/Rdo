@@ -29,7 +29,7 @@ export default function App() {
   }, []);
 
   if (!configurado) {
-    return <div className="tela-login"><div className="cartao login"><h2>Falta configurar</h2><p>Preencha <code>VITE_SUPABASE_URL</code> e <code>VITE_SUPABASE_ANON_KEY</code> no arquivo <code>app/.env.local</code> (veja o README).</p></div></div>;
+    return <div className="tela-login"><div className="cartao login"><h2>Falta configurar</h2><p>O app ainda não está ligado ao banco de dados (Supabase).</p><p>Na Netlify, em <b>Site configuration → Environment variables</b>, crie <code>VITE_SUPABASE_URL</code> e <code>VITE_SUPABASE_ANON_KEY</code> com os dados do Supabase (<b>Project Settings → API</b>) e publique de novo em <b>Deploys → Trigger deploy</b>.</p></div></div>;
   }
   if (sessao === undefined) return <div className="carregando-app"><span className="giro" /> Carregando…</div>;
   if (recuperando && sessao) return <NovaSenha aoConcluir={() => setRecuperando(false)} />;
