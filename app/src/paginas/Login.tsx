@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { msgErro, sb } from "../supabase";
+import { msgErro, sb, servidorConfigurado } from "../supabase";
 import { Aviso } from "../componentes/ui";
 
 export function Login() {
@@ -55,6 +55,7 @@ export function Login() {
             {ocupado ? "Aguarde…" : modo === "entrar" ? "Entrar" : modo === "criar" ? "Criar conta" : "Enviar link"}
           </button>
         </form>
+        <p className="dica centro diag">Servidor: {servidorConfigurado()}</p>
         <div className="links-login">
           {modo !== "entrar" && <button className="link" onClick={() => setModo("entrar")}>Já tenho conta</button>}
           {modo !== "criar" && <button className="link" onClick={() => setModo("criar")}>Criar conta</button>}
