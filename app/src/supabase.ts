@@ -21,7 +21,7 @@ export const sb = createClient(url || "http://localhost", chave || "sem-chave", 
 export function msgErro(e: unknown): string {
   if (!navigator.onLine) return "Sem internet. O rascunho continua salvo no celular; tente de novo quando tiver sinal.";
   const m = (e as { message?: string })?.message || String(e);
-  if (/row-level security|permission denied|42501/i.test(m)) return "Você não tem permissão para isso.";
+  if (/row-level security|permission denied|42501/i.test(m)) return `Você não tem permissão para isso. (detalhe: ${m})`;
   if (/Failed to fetch|NetworkError|Load failed/i.test(m)) {
     let host = url || "(vazio)";
     try { host = new URL(url || "").host; } catch { /* endereço mal formado */ }
